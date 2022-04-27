@@ -21,6 +21,8 @@ import { store } from "./store";
   </header>
 
   <RouterView />
+
+  {{ store }}
 </template>
 
 <style>

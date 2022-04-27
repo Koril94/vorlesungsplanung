@@ -1,6 +1,6 @@
 <template>
   <!-- Button trigger modal -->
-  {{semesterId}}
+  {{ semesterId }}
   <!-- Modal -->
   <div
     class="modal fade"
@@ -9,7 +9,6 @@
     aria-labelledby="exampleModalLabel"
     aria-hidden="true"
   >
-  
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -97,24 +96,24 @@
 
 <script>
 import { store } from "../store";
+const emptySemester = {
+  name: "",
+  number: null,
+  startDate: null,
+  endDate: null,
+  studyClass: null,
+  lectureDates: [],
+};
 export default {
   setup() {},
   props: {
     semesterId: String,
   },
   data() {
-    const emptySemester = {
-      name: "",
-      number: null,
-      startDate: null,
-      endDate: null,
-      studyClass: null,
-      lectureDates: [],
-    };
     const semester =
       this.semesterId in store.semesters
         ? store.semesters[this.semesterId]
-        : emptySemester;
+        : JSON.parse(JSON.stringify(emptySemester));
     return {
       store: store,
       semester: semester,
@@ -122,36 +121,28 @@ export default {
   },
   watch: {
     semesterId(newSemesterId, oldSemesterId) {
-      const emptySemester = {
-        name: "",
-        number: null,
-        startDate: null,
-        endDate: null,
-        studyClass: null,
-        lectureDates: [],
-      };
       this.semester =
         newSemesterId in store.semesters
           ? store.semesters[newSemesterId]
-          : emptySemester;
+          : JSON.parse(JSON.stringify(emptySemester));
     },
   },
   methods: {
     create: function () {
+      const isUpdate = this.semesterId in store.semesters;
       const currentSemesters = Object.entries(store.semesters).length;
-      const semesterId = this.semesterId in store.semesters ? this.semesterId : `semester${currentSemesters + 1}`;
+      const semesterId = isUpdate
+        ? this.semesterId
+        : `semester${currentSemesters + 1}`;
       this.semester.id = semesterId;
       let saveSemester = JSON.parse(JSON.stringify(this.semester));
 
       store.semesters[semesterId] = saveSemester;
-      this.semester = {
-        name: "",
-        number: null,
-        startDate: null,
-        endDate: null,
-        studyClass: null,
-        lectureDates: [],
-      };
+      console.log(isUpdate);
+      this.semester = isUpdate
+        ? saveSemester
+        : JSON.parse(JSON.stringify(emptySemester));
+      console.log(this.semester);
     },
   },
 };

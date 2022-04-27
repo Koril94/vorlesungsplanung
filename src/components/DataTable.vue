@@ -15,19 +15,21 @@
         </td>
         <td>
           <button
-            @click="$emit('update',entry.id)"
+            @click="$emit('update', entry.id)"
             type="button"
             class="btn btn-primary"
             data-bs-toggle="modal"
             data-bs-target="#semesterControllerModal"
-          >Update</button>          
+          >
+            Update
+          </button>
           <button
-            @click="$emit('delete',entry.id)"
+            @click="$emit('remove', entry.id)"
             type="button"
-            class="btn btn-primary"
-            data-bs-toggle="modal"
-            data-bs-target="#semesterControllerModal"
-          >Delete</button>
+            class="btn btn-secondary"
+          >
+            Delete
+          </button>
         </td>
       </tr>
     </tbody>
