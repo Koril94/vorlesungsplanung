@@ -1,9 +1,9 @@
 <script>
 import { store } from "../store";
-import LectureDate from "../components/LectureDate.vue";
+import DataTable from "../components/DataTable.vue";
 export default {
   components: {
-    LectureDate,
+    DataTable,
   },
   data() {
     return {
@@ -21,5 +21,5 @@ export default {
 };
 </script>
 <template>
-  <LectureDate :data="data" :columns="columns"> </LectureDate>
+  <DataTable :data="data" :columns="columns"> </DataTable>
 </template>

@@ -9,15 +9,15 @@
   >
     Add Semester
   </button>
-  <LectureDate :data="data" :columns="columns"> </LectureDate>
+  <DataTable :data="data" :columns="columns"> </DataTable>
 </template>
 <script>
 import { store } from "../store";
 import SemesterCreation from "../components/SemesterCreation.vue";
-import LectureDate from "../components/LectureDate.vue";
+import DataTable from "../components/DataTable.vue";
 export default {
   components: {
-    LectureDate,
+    DataTable,
     SemesterCreation,
   },
   data() {
