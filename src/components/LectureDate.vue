@@ -1,4 +1,3 @@
-
 <template>
   <table class="table table-striped">
     <thead>
@@ -19,13 +18,11 @@
   </table>
 </template>
 
-
 <script type="module">
 export default {
   props: {
-    data: Array,
+    data: Object,
     columns: Array,
   },
 };
 </script>
-

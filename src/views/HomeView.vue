@@ -1,10 +1,6 @@
-<template>Hello World
-</template>
+<template>Hello World</template>
 <script>
-
 export default {
-  setup() {
-      
-  },
+  setup() {},
 };
 </script>

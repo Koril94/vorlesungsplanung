@@ -20,11 +20,6 @@ export default {
   },
 };
 </script>
-  <template>
-    <LectureDate 
-    :data= "data"
-    :columns= "columns">
-  </LectureDate>
-
-  </template>
-  
+<template>
+  <LectureDate :data="data" :columns="columns"> </LectureDate>
+</template>
