@@ -1,5 +1,5 @@
 
-<template>lecutreDate
+<template>lectureDate
 {{ store.lectureDates }}
 </template>
 <script>

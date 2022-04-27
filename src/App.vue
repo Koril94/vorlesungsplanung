@@ -1,6 +1,7 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
 import { store } from "./store";
+
 </script>
 
 <template>
@@ -27,6 +28,7 @@ import { store } from "./store";
 <style>
 @import "@/assets/base.css";
 @import "@/assets/css/bootstrap.min.css";
+
 #app {
   max-width: 1280px;
   margin: 0 auto;

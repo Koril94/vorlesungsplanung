@@ -3,6 +3,7 @@ import { reactive } from "vue";
 
 const lectures = {
   lecture1: {
+    id: "lecture1",
     lectureName: "Einführung Programmierung",
     moduleName: "Informatik",
     Duration: 125,
@@ -14,6 +15,7 @@ const lectures = {
 
 const lecturers = {
   lecturer1: {
+    id: "lecturer1",
     firstName: "Max",
     lastName: "Mustermann",
     email: "max.m@email.fancy",
@@ -25,6 +27,7 @@ const lecturers = {
 
 const semesters = {
   semester1: {
+    id: "semester1",
     startDate: "2022-04-01",
     endDate: "2022-08-31",
     number: 1,
@@ -36,6 +39,7 @@ const semesters = {
 
 const studyPrograms = {
   studyProgram1: {
+    id: "studyProgram1",
     name: "Informatik",
     shortName: "Inf",
     studyClasses: ["studyClass1"],
@@ -46,6 +50,7 @@ const studyPrograms = {
 
 const studyClasses = {
   studyClass1: {
+    id: "studyClass1",
     name: "HeldenKlasse",
     startDate: "2020-10-01",
     endDate: "2022-09-30",
@@ -56,6 +61,7 @@ const studyClasses = {
 
 const lectureDates = {
   lectureDate1: {
+    id: "lectureDate1",
     name: "HeldenKlasse",
     startDate: "2022-05-02",
     endDate: "2022-05-02",
