@@ -1,17 +1,30 @@
-
-<template>lectureDate
-{{ store.lectureDates }}
-</template>
 <script>
 import { store } from "../store";
+import LectureDate from "../components/LectureDate.vue";
 export default {
-  setup() {
-
+  components: {
+    LectureDate,
   },
   data() {
     return {
-      store
-    }
-  }
+      data: store.lectureDates,
+      columns: [
+        "name",
+        "startDate",
+        "endDate",
+        "lecturer",
+        "lecture",
+        "semester",
+      ],
+    };
+  },
 };
 </script>
+  <template>
+    <LectureDate 
+    :data= "data"
+    :columns= "columns">
+  </LectureDate>
+
+  </template>
+  
