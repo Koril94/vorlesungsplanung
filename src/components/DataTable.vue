@@ -6,6 +6,8 @@
           {{ key }}
           <span> </span>
         </th>
+        <th></th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -23,6 +25,8 @@
           >
             Update
           </button>
+        </td>
+        <td>
           <button
             @click="$emit('remove', entry.id)"
             type="button"
@@ -41,6 +45,11 @@ export default {
   props: {
     data: Object,
     columns: Array,
+  },
+  methods: {
+    deleteSemester() {
+      
+    },
   },
 };
 </script>
