@@ -6,6 +6,8 @@
           {{ key }}
           <span> </span>
         </th>
+        <th></th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -15,19 +17,25 @@
         </td>
         <td>
           <button
-            @click="$emit('update',entry.id)"
+            @click="$emit('update', entry.id)"
             type="button"
             class="btn btn-primary"
             data-bs-toggle="modal"
             data-bs-target="#semesterControllerModal"
-          >Update</button>          
+          >
+            Update
+          </button>
+        </td>
+        <td>
           <button
-            @click="$emit('delete',entry.id)"
+            @click="deleteSemester"
             type="button"
             class="btn btn-primary"
             data-bs-toggle="modal"
             data-bs-target="#semesterControllerModal"
-          >Delete</button>
+          >
+            Delete
+          </button>
         </td>
       </tr>
     </tbody>
@@ -39,6 +47,11 @@ export default {
   props: {
     data: Object,
     columns: Array,
+  },
+  methods: {
+    deleteSemester() {
+      
+    },
   },
 };
 </script>
