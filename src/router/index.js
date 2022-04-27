@@ -39,9 +39,9 @@ const router = createRouter({
       component: () => import("../views/SemesterView.vue"),
     },
     {
-      path: "/lecutreDate",
-      name: "lecutreDate",
-      component: () => import("../views/LecutreDateView.vue"),
+      path: "/lectureDate",
+      name: "lectureDate",
+      component: () => import("../views/LectureDateView.vue"),
     },
   ],
 });
