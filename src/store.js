@@ -52,7 +52,7 @@ const studyClasses = {
     studyProgram: "studyProgram1",
     semesters: ["semester1"],
   },
-}
+};
 
 const lectureDates = {
   lectureDate1: {
@@ -63,7 +63,7 @@ const lectureDates = {
     lecturer: "lecturer1",
     semester: "semester1",
   },
-}
+};
 
 export const store = reactive({
   lectures: lectures,
