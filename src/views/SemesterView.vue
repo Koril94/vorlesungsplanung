@@ -9,7 +9,7 @@
   >
     Add Semester
   </button>
-  <DataTable :data="data" :columns="columns"> </DataTable>
+  <DataTable @update="setSemesterId" :data="data" :columns="columns"> </DataTable>
 </template>
 <script>
 import { store } from "../store";
@@ -20,18 +20,23 @@ export default {
     DataTable,
     SemesterCreation,
   },
+  methods: {
+    setSemesterId(id) {
+      console.log(id);
+      this.semesterId = id;
+    }
+  },
   data() {
     return {
-      semesterId: "semester1",
+      semesterId: "",
       store: store,
-      data: store.lectureDates,
+      data: store.semesters,
       columns: [
         "name",
         "startDate",
         "endDate",
-        "lecturer",
-        "lecture",
-        "semester",
+        "studyClass",
+        "number"
       ],
     };
   },

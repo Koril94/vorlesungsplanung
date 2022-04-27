@@ -13,6 +13,22 @@
         <td v-for="key in columns" :key="key">
           {{ entry[key] }}
         </td>
+        <td>
+          <button
+            @click="$emit('update',entry.id)"
+            type="button"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#semesterControllerModal"
+          >Update</button>          
+          <button
+            @click="$emit('delete',entry.id)"
+            type="button"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#semesterControllerModal"
+          >Delete</button>
+        </td>
       </tr>
     </tbody>
   </table>
