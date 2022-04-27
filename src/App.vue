@@ -14,7 +14,7 @@ import { RouterLink, RouterView } from "vue-router";
         <RouterLink to="/lecturer">Dozent</RouterLink>
         <RouterLink to="/studyClass">Studienjahrgang</RouterLink>
         <RouterLink to="/lecture">Vorlesung</RouterLink>
-        <RouterLink to="/lecutreDate">Vorlesungstermin</RouterLink>
+        <RouterLink to="/lectureDate">Vorlesungstermin</RouterLink>
         <RouterLink to="/semester">Semester</RouterLink>
         <RouterLink to="/about">About</RouterLink>
       </nav>
