@@ -9,6 +9,13 @@ import { RouterLink, RouterView } from "vue-router";
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/dashboard">Dashboard</RouterLink>
+        <RouterLink to="/studyProgram">Studiengang</RouterLink>
+        <RouterLink to="/lecturer">Dozent</RouterLink>
+        <RouterLink to="/studyClass">Studienjahrgang</RouterLink>
+        <RouterLink to="/lecture">Vorlesung</RouterLink>
+        <RouterLink to="/lecutreDate">Vorlesungstermin</RouterLink>
+        <RouterLink to="/semester">Semester</RouterLink>
         <RouterLink to="/about">About</RouterLink>
       </nav>
     </div>
