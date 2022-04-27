@@ -19,7 +19,7 @@ import { RouterLink, RouterView } from "vue-router";
 
 <style>
 @import "@/assets/base.css";
-
+@import "@/assets/css/bootstrap.min.css";
 #app {
   max-width: 1280px;
   margin: 0 auto;
