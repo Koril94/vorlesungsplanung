@@ -4,7 +4,6 @@ import { store } from "./store";
 </script>
 
 <template>
-  {{ store }}
   <header>
     <div class="wrapper">
       <nav>
