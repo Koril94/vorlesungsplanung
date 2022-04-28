@@ -125,6 +125,10 @@ export default {
       this.studyClass.id = studyClassId;
       let newStudyClass = JSON.parse(JSON.stringify(this.studyClass));
 
+      let programClasses = store.studyPrograms[newStudyClass.studyProgram].studyClasses;
+      if(!programClasses.includes(studyClassId)) programClasses.push(studyClassId);
+
+
       store.studyClasses[studyClassId] = newStudyClass;
       this.studyClass = isUpdate
         ? newStudyClass

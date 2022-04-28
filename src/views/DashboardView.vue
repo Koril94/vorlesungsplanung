@@ -89,5 +89,27 @@ export default {
       },
     };
   },
+  mounted() {
+    console.log('test');
+    let events = [];
+    let addedDates = [];
+    Object.values(this.store.lectures).forEach((lecture) =>
+      lecture.lectureDates.forEach((lectureDate) => {
+        let dateEvent = this.store.lectureDates[lectureDate];
+        if (addedDates.includes(lectureDate)) return;
+        let singleEvent = {
+          id: dateEvent.id,
+          title: dateEvent.name,
+          start: dateEvent.startDate,
+          end: dateEvent.endDate,
+        };
+        events.push(singleEvent);
+        addedDates.push(lectureDate);
+      })
+    );
+    this.calendarOptions.events = events;
+    console.log(this.calendarOptions.events.length);
+    },
+  
 };
 </script>

@@ -127,6 +127,9 @@ export default {
       this.lecturer.id = lecturerId;
       let newLecturer = JSON.parse(JSON.stringify(this.lecturer));
 
+      let programLecturers = store.studyPrograms[newLecturer.studyProgram].lecturers;
+      if(!programLecturers.includes(lecturerId)) programLecturers.push(lecturerId);
+
       store.lecturers[lecturerId] = newLecturer;
       this.lecturer = isUpdate
         ? newLecturer
