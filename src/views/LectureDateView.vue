@@ -1,3 +1,12 @@
+
+<template>
+  <div class="container bg-light">
+    <div class="page-header">
+      <h2>Vorlesungstermine</h2>
+    </div>
+    <DataTable :data="data" :columns="columns"> </DataTable>
+  </div>
+</template>
 <script>
 import { store } from "../store";
 import DataTable from "../components/DataTable.vue";
@@ -20,6 +29,3 @@ export default {
   },
 };
 </script>
-<template>
-  <DataTable :data="data" :columns="columns"> </DataTable>
-</template>

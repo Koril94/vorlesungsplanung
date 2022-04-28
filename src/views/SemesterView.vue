@@ -1,21 +1,27 @@
 <template>
   <SemesterCreation :semesterId="semesterId"></SemesterCreation>
-  <button
-    @click="semesterId = ''"
-    type="button"
-    class="btn btn-primary"
-    data-bs-toggle="modal"
-    data-bs-target="#semesterControllerModal"
-  >
-    Add Semester
-  </button>
-  <DataTable
-    @remove="removeSemester"
-    @update="setSemesterId"
-    :data="data"
-    :columns="columns"
-  >
-  </DataTable>
+  <div class="container bg-light">
+    <div class="page-header">
+      <h2>Semester</h2>
+      <button
+        @click="semesterId = ''"
+        type="button"
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#semesterControllerModal"
+      >
+        <img src="/src/components/icons/plus.svg" alt="Add" /> Semester
+        hinzufügen
+      </button>
+    </div>
+    <DataTable
+      @remove="removeSemester"
+      @update="setSemesterId"
+      :data="data"
+      :columns="columns"
+    >
+    </DataTable>
+  </div>
 </template>
 <script>
 import { store } from "../store";

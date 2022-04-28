@@ -1,0 +1,68 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+
+    #app {
+        height: 100%;
+    }
+}
+
+#nav {
+    text-align: center;
+
+
+
+    a {
+        font-weight: bold;
+    }
+
+    a.router-link-exact-active {
+        border-radius: .5rem;
+    }
+
+
+}
+
+#navbarSupportedContent > div {
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-left: 2rem;
+}
+
+.table-responsive table {
+    margin-bottom: 0.5rem;
+}
+
+
+.content {
+    background-color: lightgrey;
+    height: 100%;
+    padding: 2rem;
+
+    .page-header {
+        display: flex;
+        justify-content: space-between;
+        padding: 1.5rem 0.5rem;
+
+        h2 {
+            font-weight: 600;
+        }
+
+        button {
+            display: flex;
+            align-items: center;
+        }
+
+    }
+
+    .container {
+        height: 100%;
+        overflow: hidden;
+    }
+}
