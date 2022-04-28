@@ -24,8 +24,7 @@
               data-bs-toggle="modal"
               data-bs-target="#semesterControllerModal"
             >
-              <img src="./icons/pencil.svg" alt="Edit">
-
+              <img src="./icons/pencil.svg" alt="Edit" />
             </button>
           </td>
           <td>
@@ -34,7 +33,7 @@
               type="button"
               class="btn"
             >
-              <img src="./icons/delete-forever.svg" alt="Delete">
+              <img src="./icons/delete-forever.svg" alt="Delete" />
             </button>
           </td>
         </tr>
@@ -44,7 +43,6 @@
 </template>
 
 <script type="module">
-
 export default {
   props: {
     data: Object,

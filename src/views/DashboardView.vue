@@ -78,19 +78,19 @@ export default {
       store,
       calendarOptions: {
         plugins: [dayGridPlugin],
-        height: '100%',
-        locale: 'de',
+        height: "100%",
+        locale: "de",
         initialView: "dayGridWeek",
         timeZone: "UTC",
         events,
         buttonText: {
-          today: 'Heute'
-        }
+          today: "Heute",
+        },
       },
     };
   },
   mounted() {
-    console.log('test');
+    console.log("test");
     let events = [];
     let addedDates = [];
     Object.values(this.store.lectures).forEach((lecture) =>
@@ -109,7 +109,6 @@ export default {
     );
     this.calendarOptions.events = events;
     console.log(this.calendarOptions.events.length);
-    },
-  
+  },
 };
 </script>

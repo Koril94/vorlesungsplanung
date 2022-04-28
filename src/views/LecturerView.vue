@@ -1,26 +1,28 @@
 <template>
-  <LecturerCreation :lecturerId="lecturerId"></LecturerCreation>
+  <div class="content">
+    <LecturerCreation :lecturerId="lecturerId"></LecturerCreation>
 
-  <div class="container bg-light">
-    <div class="page-header">
-      <h2>Dozenten</h2>
-      <button
-        @click="lecturerId = ''"
-        type="button"
-        class="btn btn-primary"
-        data-bs-toggle="modal"
-        data-bs-target="#semesterControllerModal"
+    <div class="container bg-light">
+      <div class="page-header">
+        <h2>Dozenten</h2>
+        <button
+          @click="lecturerId = ''"
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#semesterControllerModal"
+        >
+          + Donzenten hinzufügen
+        </button>
+      </div>
+      <DataTable
+        @remove="removeLecturer"
+        @update="setLecturerId"
+        :data="data"
+        :columns="columns"
       >
-        + Dozenten hinzufügen
-      </button>
+      </DataTable>
     </div>
-    <DataTable
-      @remove="removeLecturer"
-      @update="setLecturerId"
-      :data="data"
-      :columns="columns"
-    >
-    </DataTable>
   </div>
 </template>
 <script>

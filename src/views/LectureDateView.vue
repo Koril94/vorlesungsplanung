@@ -1,4 +1,3 @@
-
 <template>
   <LectureDateCreation :lectureDateId="lectureDateId"></LectureDateCreation>
   <div class="container bg-light">
@@ -15,12 +14,12 @@
       </button>
     </div>
     <DataTable
-        @remove="removeLectureDate"
-        @update="setLectureDateId"
-        :data="data"
-        :columns="columns"
-      >
-      </DataTable>
+      @remove="removeLectureDate"
+      @update="setLectureDateId"
+      :data="data"
+      :columns="columns"
+    >
+    </DataTable>
   </div>
 </template>
 <script>
@@ -48,7 +47,7 @@ export default {
       ],
     };
   },
-   methods: {
+  methods: {
     setLectureDateId(id) {
       this.lectureDateId = id;
     },

@@ -11,7 +11,9 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Neuer Vorlesungstermin</h5>
+          <h5 class="modal-title" id="exampleModalLabel">
+            Neuer Vorlesungstermin
+          </h5>
           <button
             type="button"
             class="btn-close"
@@ -77,7 +79,7 @@
                   v-bind:key="lecturer.id"
                   v-bind:value="lecturer.id"
                 >
-                  {{ lecturer.firstName  }} {{ lecturer.lastName }}
+                  {{ lecturer.firstName }} {{ lecturer.lastName }}
                 </option>
               </select>
             </div>
@@ -160,13 +162,18 @@ export default {
       let newLectureDate = JSON.parse(JSON.stringify(this.lectureDate));
 
       let lectureLecdates = store.lectures[newLectureDate.lecture].lectureDates;
-      if(!lectureLecdates.includes(lectureDateId)) lectureLecdates.push(lectureDateId);
+      if (!lectureLecdates.includes(lectureDateId))
+        lectureLecdates.push(lectureDateId);
 
-      let lecturerLecdates = store.lecturers[newLectureDate.lecturer].lectureDates;
-      if(!lecturerLecdates.includes(lectureDateId)) lecturerLecdates.push(lectureDateId);
+      let lecturerLecdates =
+        store.lecturers[newLectureDate.lecturer].lectureDates;
+      if (!lecturerLecdates.includes(lectureDateId))
+        lecturerLecdates.push(lectureDateId);
 
-      let semesterLecDates = store.semesters[newLectureDate.semester].lectureDates;
-      if(!semesterLecDates.includes(lectureDateId)) semesterLecDates.push(lectureDateId);
+      let semesterLecDates =
+        store.semesters[newLectureDate.semester].lectureDates;
+      if (!semesterLecDates.includes(lectureDateId))
+        semesterLecDates.push(lectureDateId);
 
       store.lectureDates[lectureDateId] = newLectureDate;
       this.lectureDate = isUpdate

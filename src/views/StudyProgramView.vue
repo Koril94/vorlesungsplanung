@@ -1,9 +1,12 @@
 <template>
-<StudyProgramCreation :studyProgramId="studyProgramId"></StudyProgramCreation>
-  <div class="container bg-light">
-    <div class="page-header">
-      <h2>Studiengang</h2>
-      <button
+  <div class="content">
+    <StudyProgramCreation
+      :studyProgramId="studyProgramId"
+    ></StudyProgramCreation>
+    <div class="container bg-light">
+      <div class="page-header">
+        <h2>Studiengang</h2>
+        <button
           @click="studyProgramId = ''"
           type="button"
           class="btn btn-primary"
@@ -12,7 +15,7 @@
         >
           + Studiengang
         </button>
-    </div>
+      </div>
       <DataTable
         @remove="removeStudyProgram"
         @update="setStudyProgramId"
@@ -20,6 +23,7 @@
         :columns="columns"
       >
       </DataTable>
+    </div>
   </div>
 </template>
 <script>
@@ -39,7 +43,7 @@ export default {
   },
   components: {
     DataTable,
-    StudyProgramCreation
+    StudyProgramCreation,
   },
   methods: {
     setStudyProgramId: function (id) {
