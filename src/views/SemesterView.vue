@@ -9,7 +9,13 @@
   >
     Add Semester
   </button>
-  <DataTable @update="setSemesterId" :data="data" :columns="columns"> </DataTable>
+  <DataTable
+    @remove="removeSemester"
+    @update="setSemesterId"
+    :data="data"
+    :columns="columns"
+  >
+  </DataTable>
 </template>
 <script>
 import { store } from "../store";
@@ -22,22 +28,31 @@ export default {
   },
   methods: {
     setSemesterId(id) {
-      console.log(id);
       this.semesterId = id;
-    }
+    },
+    removeSemester(id) {
+      delete this.store.semesters[id];
+      Object.values(this.store.studyClasses)
+        .filter((studyClass) => studyClass.semesters.includes(id))
+        .forEach(
+          (studyClass) =>
+            (studyClass.semesters = studyClass.semesters.filter(
+              (semester) => semester !== id
+            ))
+        );
+      Object.entries(this.store.lectureDates)
+        .filter(([key, value]) => value.semester !== id)
+        .forEach(([key, value]) => {
+          this.store.lectureDates[key] = value;
+        });
+    },
   },
   data() {
     return {
       semesterId: "",
       store: store,
       data: store.semesters,
-      columns: [
-        "name",
-        "startDate",
-        "endDate",
-        "studyClass",
-        "number"
-      ],
+      columns: ["name", "startDate", "endDate", "studyClass", "number"],
     };
   },
 };

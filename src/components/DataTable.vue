@@ -28,11 +28,9 @@
         </td>
         <td>
           <button
-            @click="deleteSemester"
+            @click="$emit('remove', entry.id)"
             type="button"
-            class="btn btn-primary"
-            data-bs-toggle="modal"
-            data-bs-target="#semesterControllerModal"
+            class="btn btn-secondary"
           >
             Delete
           </button>
