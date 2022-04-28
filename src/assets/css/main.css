@@ -4,6 +4,13 @@
   box-sizing: border-box;
 }
 
+body {
+  height: 100vh;
+}
+body #app {
+  height: 100%;
+}
+
 #nav {
   text-align: center;
 }
@@ -16,6 +23,33 @@
 
 #navbarSupportedContent > div {
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 100%;
+  margin-left: 2rem;
+}
+
+.table-responsive table {
+  margin-bottom: 0.5rem;
+}
+
+.content {
+  background-color: lightgrey;
+  height: 100%;
+  padding: 2rem;
+}
+.content .page-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 0.5rem;
+}
+.content .page-header h2 {
+  font-weight: 600;
+}
+.content .page-header button {
+  display: flex;
+  align-items: center;
+}
+.content .container {
+  height: 100%;
+  overflow: hidden;
 }/*# sourceMappingURL=main.css.map */
