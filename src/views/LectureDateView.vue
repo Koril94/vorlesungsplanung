@@ -1,25 +1,27 @@
 <template>
-  <LectureDateCreation :lectureDateId="lectureDateId"></LectureDateCreation>
-  <div class="container bg-light">
-    <div class="page-header">
-      <h2>Vorlesungstermine</h2>
-      <button
-        @click="lectureDateId = ''"
-        type="button"
-        class="btn btn-primary"
-        data-bs-toggle="modal"
-        data-bs-target="#semesterControllerModal"
+  <div class="content">
+    <LectureDateCreation :lectureDateId="lectureDateId"></LectureDateCreation>
+    <div class="container bg-light">
+      <div class="page-header">
+        <h2>Vorlesungstermine</h2>
+        <button
+          @click="lectureDateId = ''"
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#semesterControllerModal"
+        >
+          + Volresungstermin hinzufügen
+        </button>
+      </div>
+      <DataTable
+        @remove="removeLectureDate"
+        @update="setLectureDateId"
+        :data="data"
+        :columns="columns"
       >
-        + Volresungstermin hinzufügen
-      </button>
+      </DataTable>
     </div>
-    <DataTable
-      @remove="removeLectureDate"
-      @update="setLectureDateId"
-      :data="data"
-      :columns="columns"
-    >
-    </DataTable>
   </div>
 </template>
 <script>
