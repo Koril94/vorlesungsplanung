@@ -25,13 +25,17 @@ body #app {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  margin-left: 2rem;
 }
 
 .table-responsive table {
   margin-bottom: 0.5rem;
 }
 
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-collapse {
+    margin-left: 2rem;
+  }
+}
 .content {
   background-color: lightgrey;
   height: 100%;
