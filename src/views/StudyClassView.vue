@@ -1,8 +1,8 @@
 <template>
-  <div class="container bg-light">
-    <div class="page-header">
-      <h2>Studienjahrgang</h2>
-      <div class="add-button">
+  <div class="content">
+    <div class="container bg-light">
+      <div class="page-header">
+        <h2>Studienjahrgang</h2>
         <button
           @click="studyClassId = ''"
           type="button"
@@ -13,15 +13,15 @@
           + Studienjahrgang
         </button>
       </div>
+      <StudyClassCreation :studyClassId="studyClassId"></StudyClassCreation>
+      <DataTable
+        @remove="removeStudyClass"
+        @update="setStudyClassId"
+        :data="data"
+        :columns="columns"
+      >
+      </DataTable>
     </div>
-    <StudyClassCreation :studyClassId="studyClassId"></StudyClassCreation>
-    <DataTable
-      @remove="removeStudyClass"
-      @update="setStudyClassId"
-      :data="data"
-      :columns="columns"
-    >
-    </DataTable>
   </div>
 </template>
 <script>
