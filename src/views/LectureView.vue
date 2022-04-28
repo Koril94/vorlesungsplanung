@@ -4,7 +4,7 @@
     <div class="page-header">
       <h2>Vorlesung</h2>
       <button
-        @click="lecturId = ''"
+        @click="lectureId = ''"
         type="button"
         class="btn btn-primary"
         data-bs-toggle="modal"
