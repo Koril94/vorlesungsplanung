@@ -9,7 +9,7 @@ const lectures = {
     Duration: 125,
     lectureDates: ["lectureDate1"],
     lecturers: ["lecturer1"],
-    studyProgram: "program1",
+    studyProgram: "studyProgram1",
   },
 };
 
@@ -21,7 +21,7 @@ const lecturers = {
     email: "max.m@email.fancy",
     lectureDates: ["lectureDate1"],
     lectures: ["lecture1"],
-    studyProgram: "program1",
+    studyProgram: "studyProgram1",
   },
 };
 
