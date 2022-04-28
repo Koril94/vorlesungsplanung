@@ -5,119 +5,53 @@ import { store } from "./store";
 
 <template>
   <header>
-    <div class="wrapper">
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/dashboard">Dashboard</RouterLink>
-        <RouterLink to="/studyProgram">Studiengang</RouterLink>
-        <RouterLink to="/lecturer">Dozent</RouterLink>
-        <RouterLink to="/studyClass">Studienjahrgang</RouterLink>
-        <RouterLink to="/lecture">Vorlesung</RouterLink>
-        <RouterLink to="/lectureDate">Vorlesungstermin</RouterLink>
-        <RouterLink to="/semester">Semester</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+    <div id="nav ">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid ">
+          <a class="navbar-brand" href="#">Uniplaner</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="navbar-nav mr-auto">
+              <RouterLink class="nav-link" to="/">Home</RouterLink>
+              <RouterLink class="nav-link" to="/dashboard"
+                >Dashboard</RouterLink
+              >
+              <RouterLink class="nav-link" to="/studyProgram"
+                >Studiengang</RouterLink
+              >
+              <RouterLink class="nav-link" to="/lecturer">Dozent</RouterLink>
+              <RouterLink class="nav-link" to="/studyClass"
+                >Studienjahrgang</RouterLink
+              >
+              <RouterLink class="nav-link" to="/lecture">Vorlesung</RouterLink>
+              <RouterLink class="nav-link" to="/lectureDate"
+                >Vorlesungstermin</RouterLink
+              >
+              <RouterLink class="nav-link" to="/semester">Semester</RouterLink>
+              <!-- <RouterLink to="/about">About</RouterLink> -->
+            </div>
+          </div>
+        </div>
       </nav>
     </div>
   </header>
-
-  <RouterView />
+  <div class="content">
+    <RouterView />
+  </div>
 </template>
 
 <style>
-@import "@/assets/base.css";
+/* @import "@/assets/base.css"; */
 @import "@/assets/css/bootstrap.min.css";
-
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-
-  font-weight: normal;
-}
-
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-}
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
-
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
+@import "@/assets/css/main.css";
 </style>
