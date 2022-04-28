@@ -65,7 +65,7 @@ const emptyStudyProgram = {
   name: "",
   shortName: null,
   studyClasses: [],
-  lectures: [],
+  lecturers: [],
   lectureDates: [],
 };
 export default {

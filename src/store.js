@@ -93,6 +93,25 @@ function removeLecture(id) {
 
 function removeLectureDate(id) {
   delete this.lectureDates[id];
+
+  Object.values(this.lectures).forEach(
+    (lecture) =>
+      (lecture.lectureDates = lecture.lectureDates.filter(
+        (lectureDate) => lectureDate !== id
+      ))
+  );
+  Object.values(this.lecturers).forEach(
+    (lecturer) =>
+      (lecturer.lectureDates = lecturer.lectureDates.filter(
+        (lectureDate) => lectureDate !== id
+      ))
+  );
+  Object.values(this.semesters).forEach(
+    (semester) =>
+      (semester.lectureDates = semester.lectureDates.filter(
+        (lectureDate) => lectureDate !== id
+      ))
+  );
 }
 
 function removeLecturer(id) {
