@@ -42,7 +42,7 @@
     </div>
   </div>
 
-  <div class="container-fluid px-5">
+  <div class="container-fluid px-5 calendar">
     <FullCalendar :options="calendarOptions" />
   </div>
 </template>
@@ -78,9 +78,14 @@ export default {
       store,
       calendarOptions: {
         plugins: [dayGridPlugin],
+        height: '100%',
+        locale: 'de',
         initialView: "dayGridWeek",
         timeZone: "UTC",
         events,
+        buttonText: {
+          today: 'Heute'
+        }
       },
     };
   },
