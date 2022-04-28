@@ -52,4 +52,8 @@ body #app {
 .content .container {
   height: 100%;
   overflow: hidden;
+}
+
+.calendar {
+  height: 60vh;
 }/*# sourceMappingURL=main.css.map */
