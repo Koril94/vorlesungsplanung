@@ -46,24 +46,7 @@ export default {
       this.lecturerId = id;
     },
     removeLecturer: function (id) {
-      delete this.store.lecturers[id];
-
-      Object.values(this.store.lectures)
-        .filter((lecture) => lecture.lecturers.includes(id))
-        .forEach(
-          (lecture) =>
-            (lecture.lecturers = lecture.lecturers.filter(
-              (lecturerId) => lecturerId !== id
-            ))
-        );
-      Object.values(this.store.studyPrograms)
-        .filter((studyProgram) => studyProgram.lecturers.includes(id))
-        .forEach(
-          (studyProgram) =>
-            (studyProgram.lecturers = studyProgram.lecturers.filter(
-              (lecturerId) => lecturerId !== id
-            ))
-        );
+      this.store.removeLecturer(id);
     },
   },
 };

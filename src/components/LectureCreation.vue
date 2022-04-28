@@ -86,12 +86,13 @@
 <script>
 import { store } from "../store";
 const emptyLecture = {
-  name: "",
-  number: null,
-  startDate: null,
-  endDate: null,
-  studyClass: null,
+  id: "",
+  lectureName: "",
+  moduleName: null,
+  Duration: null,
   lectureDates: [],
+  lecturers: [],
+  studyProgram: null,
 };
 export default {
   setup() {},

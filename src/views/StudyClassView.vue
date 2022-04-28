@@ -10,7 +10,7 @@
           data-bs-toggle="modal"
           data-bs-target="#semesterControllerModal"
         >
-          Add study class
+          + Studienjahrgang
         </button>
       </div>
     </div>

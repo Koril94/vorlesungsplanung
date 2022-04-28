@@ -11,7 +11,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">New semester</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Neuer Studiengang</h5>
           <button
             type="button"
             class="btn-close"
@@ -24,68 +24,33 @@
             <div class="col-md-6">
               <label for="name" class="form-label">Name</label>
               <input
-                v-model="semester.name"
+                v-model="studyProgram.name"
                 type="text"
                 class="form-control"
                 id="name"
               />
             </div>
             <div class="col-md-6">
-              <label for="number" class="form-label">Number</label>
+              <label for="shortName" class="form-label">Abkürzung</label>
               <input
-                v-model="semester.number"
-                type="number"
+                v-model="studyProgram.shortName"
+                type="text"
                 class="form-control"
-                id="number"
+                id="shortName"
               />
-            </div>
-            <div class="col-12">
-              <label for="startDate" class="form-label">Start date</label>
-              <input
-                type="date"
-                class="form-control"
-                id="startDate"
-                placeholder="2022-12-12"
-                v-model="semester.startDate"
-              />
-            </div>
-            <div class="col-12">
-              <label for="endDate" class="form-label">End date</label>
-              <input
-                type="date"
-                class="form-control"
-                id="endDate"
-                v-model="semester.endDate"
-              />
-            </div>
-            <div class="col-md-12">
-              <label for="studyClass" class="form-label">Study Class</label>
-              <select
-                v-model="semester.studyClass"
-                id="studyClass"
-                class="form-select"
-              >
-                <option
-                  v-for="studyClass in store.studyClasses"
-                  v-bind:key="studyClass.id"
-                  v-bind:value="studyClass.id"
-                >
-                  {{ studyClass.name }}
-                </option>
-              </select>
             </div>
           </form>
         </div>
         <div class="modal-footer px-3">
           <button type="button" @click="create" class="btn btn-primary">
-            Add semester
+            Studiengang hinzufügen
           </button>
           <button
             type="button"
             class="btn btn-secondary"
             data-bs-dismiss="modal"
           >
-            Close
+            Schließen
           </button>
         </div>
       </div>
@@ -95,53 +60,51 @@
 
 <script>
 import { store } from "../store";
-const emptySemester = {
+const emptyStudyProgram = {
+  id: "",
   name: "",
-  number: null,
-  startDate: null,
-  endDate: null,
-  studyClass: null,
+  shortName: null,
+  studyClasses: [],
+  lectures: [],
   lectureDates: [],
 };
 export default {
   setup() {},
   props: {
-    semesterId: String,
+    studyProgramId: String,
   },
   data() {
-    const semester =
-      this.semesterId in store.semesters
-        ? store.semesters[this.semesterId]
-        : JSON.parse(JSON.stringify(emptySemester));
+    const studyProgram =
+      this.studyProgramId in store.studyPrograms
+        ? store.studyPrograms[this.studyProgramId]
+        : JSON.parse(JSON.stringify(emptyStudyProgram));
     return {
       store: store,
-      semester: semester,
+      studyProgram: studyProgram,
     };
   },
   watch: {
-    semesterId(newSemesterId, oldSemesterId) {
-      this.semester =
-        newSemesterId in store.semesters
-          ? store.semesters[newSemesterId]
-          : JSON.parse(JSON.stringify(emptySemester));
+    studyProgramId(newStudyProgramId, oldstudyProgramId) {
+      this.studyProgram =
+        newStudyProgramId in store.studyPrograms
+          ? store.studyPrograms[newStudyProgramId]
+          : JSON.parse(JSON.stringify(emptyStudyProgram));
     },
   },
   methods: {
     create: function () {
-      const isUpdate = this.semesterId in store.semesters;
-      const currentSemesters = Object.entries(store.semesters).length;
-      const semesterId = isUpdate
-        ? this.semesterId
-        : `semester${currentSemesters + 1}`;
-      this.semester.id = semesterId;
-      let saveSemester = JSON.parse(JSON.stringify(this.semester));
+      const isUpdate = this.studyProgramId in store.studyPrograms;
+      const currentstudyPrograms = Object.entries(store.studyPrograms).length;
+      const studyProgramId = isUpdate
+        ? this.studyProgramId
+        : `studyProgram${currentstudyPrograms + 1}`;
+      this.studyProgram.id = studyProgramId;
+      let savestudyProgram = JSON.parse(JSON.stringify(this.studyProgram));
 
-      store.semesters[semesterId] = saveSemester;
-      console.log(isUpdate);
-      this.semester = isUpdate
-        ? saveSemester
-        : JSON.parse(JSON.stringify(emptySemester));
-      console.log(this.semester);
+      store.studyPrograms[studyProgramId] = savestudyProgram;
+      this.studyProgram = isUpdate
+        ? savestudyProgram
+        : JSON.parse(JSON.stringify(emptyStudyProgram));
     },
   },
 };

@@ -1,12 +1,21 @@
 <template>
+<StudyProgramCreation :studyProgramId="studyProgramId"></StudyProgramCreation>
   <div class="container bg-light">
     <div class="page-header">
-      <h2>Studienprogram</h2>
-      
+      <h2>Studiengang</h2>
+      <button
+          @click="studyProgramId = ''"
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#semesterControllerModal"
+        >
+          + Studiengang
+        </button>
     </div>
       <DataTable
         @remove="removeStudyProgram"
-        @update="updateStudyProgram"
+        @update="setStudyProgramId"
         :data="data"
         :columns="columns"
       >
@@ -16,17 +25,29 @@
 <script>
 import { store } from "../store";
 import DataTable from "../components/DataTable.vue";
+import StudyProgramCreation from "../components/StudyProgramCreation.vue";
 
 export default {
   setup() {},
   data() {
     return {
+      studyProgramId: "",
+      store,
       data: store.studyPrograms,
       columns: ["name", "shortName"],
     };
   },
   components: {
     DataTable,
+    StudyProgramCreation
+  },
+  methods: {
+    setStudyProgramId: function (id) {
+      this.studyProgramId = id;
+    },
+    removeStudyProgram: function (id) {
+      this.store.removeStudyProgram(id);
+    },
   },
 };
 </script>

@@ -46,13 +46,7 @@ export default {
       this.lectureId = id;
     },
     removeLecture: function (id) {
-      delete this.store.lectures[id];
-
-      Object.values(this.store.lecturers).forEach(lecturer => lecturer.lectures = lecturer.lectures.filter(lectureId => lectureId !== id));
-      Object.values(this.store.studyPrograms).forEach(studyProgram => studyProgram.lectures = studyProgram.lectures.filter(lectureId => lectureId !== id));
-      let lectureDates = {};
-      Object.values(this.store.lectureDates).filter(lectureDate => lectureDate.lecture !== id).forEach(lectureDate => lectureDates[lectureDate.id] = lectureDate);
-      this.store.lectureDates = lectureDates;
+      this.store.removeLecture(id);
     },
   },
 };

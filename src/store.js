@@ -71,6 +71,82 @@ const lectureDates = {
   },
 };
 
+function removeLecture(id) {
+  delete this.lectures[id];
+
+  Object.values(this.lecturers).forEach(lecturer => lecturer.lectures = lecturer.lectures.filter(lectureId => lectureId !== id));
+  Object.values(this.studyPrograms).forEach(studyProgram => studyProgram.lectures = studyProgram.lectures.filter(lectureId => lectureId !== id));
+  Object.values(this.lectureDates).filter(lectureDate => lectureDate.lecture === id).forEach(lectureDate => this.removeLectureDate(lectureDate.id));
+  
+}
+
+function removeLectureDate(id) {
+  delete this.lectureDates[id];
+}
+
+function removeLecturer(id) {
+  console.log(this, '12')
+  delete this.lecturers[id];
+
+  Object.values(this.lectures)
+    .filter((lecture) => lecture.lecturers.includes(id))
+    .forEach(
+      (lecture) =>
+        (lecture.lecturers = lecture.lecturers.filter(
+          (lecturerId) => lecturerId !== id
+        ))
+    );
+  Object.values(this.studyPrograms)
+    .filter((studyProgram) => studyProgram.lecturers.includes(id))
+    .forEach(
+      (studyProgram) =>
+        (studyProgram.lecturers = studyProgram.lecturers.filter(
+          (lecturerId) => lecturerId !== id
+        ))
+    );
+
+}
+
+function removeStudyClass(id) {
+  
+  delete this.studyClasses[id];
+  Object.values(this.studyPrograms).forEach(
+    (studyProgram) =>
+      (studyProgram.studyClasses = studyProgram.studyClasses.filter(
+        (studyClass) => studyClass !== id
+      ))
+  );
+  
+  Object.values(this.semesters).filter(semester => semester.studyClass === id).forEach(semester => this.removeSemester(semester.id));
+}
+
+function removeStudyProgram(id) {
+  console.log(this)
+  delete this.studyPrograms[id];
+  Object.values(this.lectures).filter(lecture => lecture.studyProgram === id).forEach(lecture => this.removeLecture(lecture.id));
+
+  Object.values(this.lecturers).filter(lecturer => lecturer.studyProgram === id).forEach(lecturer => this.removeLecturer(lecturer.id));
+
+  Object.values(this.studyClasses).filter(studyClass => studyClass.studyProgram === id).forEach(studyClass => this.removeStudyClass(studyClass.id));
+}
+
+
+function removeSemester(id) {
+  delete this.semesters[id];
+  Object.values(this.studyClasses)
+    .filter((studyClass) => studyClass.semesters.includes(id))
+    .forEach(
+      (studyClass) =>
+        (studyClass.semesters = studyClass.semesters.filter(
+          (semester) => semester !== id
+        ))
+    );
+
+    Object.values(this.lectureDates).filter(lectureDate => lectureDate.semester === id).forEach(lectureDate => this.removeLectureDate(lectureDate.id))
+    
+
+}
+
 export const store = reactive({
   lectures: lectures,
   lecturers: lecturers,
@@ -78,4 +154,10 @@ export const store = reactive({
   lectureDates: lectureDates,
   semesters: semesters,
   studyClasses: studyClasses,
+  removeLecture,
+  removeLectureDate,
+  removeLecturer,
+  removeStudyClass,
+  removeStudyProgram,
+  removeSemester
 });
