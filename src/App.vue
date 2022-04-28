@@ -51,7 +51,7 @@ import { store } from "./store";
       </div>
     </div>
   </header>
-    <RouterView />
+  <RouterView />
 </template>
 
 <style>

@@ -128,6 +128,9 @@ export default {
       let newLecture = JSON.parse(JSON.stringify(this.lecture));
 
       store.lectures[lectureId] = newLecture;
+      let programLectures =
+        store.studyPrograms[newLecture.studyProgram].lectures;
+      if (!programLectures.includes(lectureId)) programLectures.push(lectureId);
       this.lecture = isUpdate
         ? newLecture
         : JSON.parse(JSON.stringify(emptyLecture));

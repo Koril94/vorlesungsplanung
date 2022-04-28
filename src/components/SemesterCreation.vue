@@ -134,6 +134,11 @@ export default {
       this.semester.id = semesterId;
       let saveSemester = JSON.parse(JSON.stringify(this.semester));
 
+      let studyClassSemesters =
+        store.studyClasses[saveSemester.studyClasses].semesters;
+      if (!studyClassSemesters.includes(semesterId))
+        studyClassSemesters.push(semesterId);
+
       store.semesters[semesterId] = saveSemester;
       console.log(isUpdate);
       this.semester = isUpdate
