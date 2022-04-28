@@ -1,5 +1,5 @@
 <template>
-<DataTable
+  <DataTable
     @remove="removeLecture"
     @update="updateLecture"
     :data="data"
@@ -17,10 +17,10 @@ export default {
     return {
       data: store.lectures,
       columns: ["lectureName", "moduleName", "Duration", "studyProgram"],
-    }
+    };
   },
   components: {
-    DataTable
-  }
+    DataTable,
+  },
 };
 </script>

@@ -7,7 +7,7 @@ import { store } from "./store";
   <header>
     <div id="nav ">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid ">
+        <div class="container-fluid">
           <a class="navbar-brand" href="#">Uniplaner</a>
           <button
             class="navbar-toggler"

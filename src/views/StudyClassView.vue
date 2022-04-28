@@ -1,7 +1,6 @@
 <template>
-
-<StudyClassCreation :studyClassId="studyClassId"></StudyClassCreation>
-<button
+  <StudyClassCreation :studyClassId="studyClassId"></StudyClassCreation>
+  <button
     @click="studyClassId = ''"
     type="button"
     class="btn btn-primary"
@@ -10,7 +9,7 @@
   >
     Add study class
   </button>
-<DataTable
+  <DataTable
     @remove="removeStudyClass"
     @update="setStudyClassId"
     :data="data"
@@ -21,12 +20,12 @@
 <script>
 import { store } from "../store";
 import DataTable from "../components/DataTable.vue";
-import StudyClassCreation from "../components/StudyClassCreation.vue"
+import StudyClassCreation from "../components/StudyClassCreation.vue";
 export default {
   setup() {},
   components: {
     DataTable,
-    StudyClassCreation
+    StudyClassCreation,
   },
   methods: {
     setStudyClassId(id) {
@@ -34,13 +33,17 @@ export default {
     },
     removeStudyClass(studyClassId) {
       delete this.store.studyClasses[studyClassId];
-      Object.values(this.store.studyPrograms).forEach(studyProgram => studyProgram.studyClasses = studyProgram.studyClasses.filter(studyClass => studyClass !== studyClassId));
-      
+      Object.values(this.store.studyPrograms).forEach(
+        (studyProgram) =>
+          (studyProgram.studyClasses = studyProgram.studyClasses.filter(
+            (studyClass) => studyClass !== studyClassId
+          ))
+      );
     },
   },
   data() {
     return {
-      studyClassId : "",
+      studyClassId: "",
       store: store,
       data: store.studyClasses,
       columns: ["name", "startDate", "endDate", "studyProgram"],

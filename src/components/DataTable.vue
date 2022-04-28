@@ -47,9 +47,7 @@ export default {
     columns: Array,
   },
   methods: {
-    deleteSemester() {
-      
-    },
+    deleteSemester() {},
   },
 };
 </script>
