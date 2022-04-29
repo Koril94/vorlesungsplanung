@@ -32,11 +32,26 @@ import LectureCreation from "../components/LectureCreation.vue";
 export default {
   setup() {},
   data() {
+    // let lectures = {};
+
+    // for (const lectureId in store.lectures) {
+    //   const lecture = store.lectures[lectureId];
+    //   console.log(lecture);
+    //   lectures[lectureId] = lecture;
+    //    lectures[lectureId].studyProgramName = store.studyPrograms[lecture.studyProgram].name;
+    //   console.log(lectures);
+    // }
+
     return {
       store,
       lectureId: "",
       data: store.lectures,
-      columns: ["lectureName", "moduleName", "Duration", "studyProgram"],
+      columns: [
+        ["lectureName", "Vorlesung"],
+        ["moduleName", "Modul"],
+        ["Duration", "Dauer"],
+        ["studyProgramName", "Studienjahrgang"],
+      ],
     };
   },
   components: {

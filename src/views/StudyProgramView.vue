@@ -38,7 +38,7 @@ export default {
       studyProgramId: "",
       store,
       data: store.studyPrograms,
-      columns: ["name", "shortName"],
+      columns: [["name", "Studiengang"], ["shortName","Abkürzung"]],
     };
   },
   components: {

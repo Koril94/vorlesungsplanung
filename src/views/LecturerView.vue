@@ -36,7 +36,12 @@ export default {
       store: store,
       lecturerId: "",
       data: store.lecturers,
-      columns: ["firstName", "lastName", "email", "studyProgram"],
+      columns: [
+        ["firstName", "Vorname"],
+        ["lastName", "Nachname"],
+        ["email", "Email"],
+        ["studyProgram", "Studiengang"],
+      ],
     };
   },
   components: {
