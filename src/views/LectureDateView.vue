@@ -28,7 +28,16 @@
 import { store } from "../store";
 import DataTable from "../components/DataTable.vue";
 import LectureDateCreation from "../components/LectureDateCreation.vue";
-
+function getData() {
+  let lectureDates = Object.values(store.lectureDates).map((lectureDate) => {
+    let newLectureDate = JSON.parse(JSON.stringify(lectureDate));
+    newLectureDate.lecture = store.lectures[lectureDate.lecture].lectureName;
+    newLectureDate.lecturer = store.lecturers[lectureDate.lecturer].lastName;
+    newLectureDate.semester = store.semesters[lectureDate.semester].name;
+    return newLectureDate;
+  });
+  return lectureDates;
+}
 export default {
   components: {
     DataTable,
@@ -38,7 +47,7 @@ export default {
     return {
       store,
       lectureDateId: "",
-      data: store.lectureDates,
+      data: getData(),
       columns: [
         ["name", "Termin"],
         ["startDate", "Startzeit"],
@@ -55,6 +64,14 @@ export default {
     },
     removeLectureDate(id) {
       this.store.removeLectureDate(id);
+    },
+  },
+  watch: {
+    store: {
+      handler() {
+        this.data = getData();
+      },
+      deep: true,
     },
   },
 };

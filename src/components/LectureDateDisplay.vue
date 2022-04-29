@@ -57,6 +57,12 @@ export default {
     };
   },
   watch: {
+    store: {
+      handler() {
+        this.data = getData();
+      },
+      deep: true,
+    },
     lectureDateId(newLectureDateId, oldLectureDateId) {
       console.log(store.lectureDates);
       this.lectureDate =

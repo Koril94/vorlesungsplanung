@@ -28,6 +28,15 @@
 import { store } from "../store";
 import DataTable from "../components/DataTable.vue";
 import StudyClassCreation from "../components/StudyClassCreation.vue";
+function getData() {
+  let studyClasses = Object.values(store.studyClasses).map((studyClass) => {
+    let newStudyClass = JSON.parse(JSON.stringify(studyClass));
+    newStudyClass.studyProgram =
+      store.studyPrograms[studyClass.studyProgram].name;
+    return newStudyClass;
+  });
+  return studyClasses;
+}
 export default {
   setup() {},
   components: {
@@ -52,7 +61,7 @@ export default {
     return {
       studyClassId: "",
       store: store,
-      data: store.studyClasses,
+      data: getData(),
       columns: [
         ["name", "Studienjahrgang"],
         ["startDate", "Begin Datum"],
@@ -60,6 +69,14 @@ export default {
         ["studyProgram", "Studiengang"],
       ],
     };
+  },
+  watch: {
+    store: {
+      handler() {
+        this.data = getData();
+      },
+      deep: true,
+    },
   },
 };
 </script>

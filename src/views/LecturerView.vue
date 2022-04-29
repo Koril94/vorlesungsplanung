@@ -29,13 +29,23 @@
 import { store } from "../store";
 import DataTable from "../components/DataTable.vue";
 import LecturerCreation from "../components/LecturerCreation.vue";
+function getData() {
+  let lecturers = Object.values(store.lecturers).map((lecturer) => {
+    let newLecturer = JSON.parse(JSON.stringify(lecturer));
+    newLecturer.studyProgram = store.studyPrograms[lecturer.studyProgram].name;
+    return newLecturer;
+  });
+  return lecturers;
+}
 export default {
   setup() {},
   data() {
+    let lecturers = getData();
+    console.log(lecturers);
     return {
       store: store,
       lecturerId: "",
-      data: store.lecturers,
+      data: lecturers,
       columns: [
         ["firstName", "Vorname"],
         ["lastName", "Nachname"],
@@ -54,6 +64,16 @@ export default {
     },
     removeLecturer: function (id) {
       this.store.removeLecturer(id);
+    },
+  },
+  watch: {
+    store: {
+      handler() {
+        let lecturers = getData();
+
+        this.data = lecturers;
+      },
+      deep: true,
     },
   },
 };

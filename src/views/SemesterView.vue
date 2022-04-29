@@ -29,6 +29,14 @@
 import { store } from "../store";
 import SemesterCreation from "../components/SemesterCreation.vue";
 import DataTable from "../components/DataTable.vue";
+function getData() {
+  let semesters = Object.values(store.semesters).map((semester) => {
+    let newSemester = JSON.parse(JSON.stringify(semester));
+    newSemester.studyClass = store.studyClasses[semester.studyClass].name;
+    return newSemester;
+  });
+  return semesters;
+}
 export default {
   components: {
     DataTable,
@@ -43,27 +51,26 @@ export default {
     },
   },
   data() {
-    // let semesters = {};
-
-    // for (const semesterId in store.semesters) {
-    //   const semester = store.semesters[semesterId];
-    //   semesters[semesterId] = semester;
-    //   semesters[semesterId].studyClassName =
-    //     store.studyClasses[semester.studyClass].name;
-    // }
-
     return {
       semesterId: "",
       store: store,
-      data: store.semesters,
+      data: getData(),
       columns: [
         ["name", "Semester"],
         ["startDate", "Semesterbegin"],
         ["endDate", "Semesterende"],
-        ["studyClassName", "Studiengang"],
+        ["studyClass", "Studienjahrgang"],
         ["number", "Nummer"],
       ],
     };
+  },
+  watch: {
+    store: {
+      handler() {
+        this.data = getData();
+      },
+      deep: true,
+    },
   },
 };
 </script>

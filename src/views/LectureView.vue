@@ -32,25 +32,21 @@ import LectureCreation from "../components/LectureCreation.vue";
 export default {
   setup() {},
   data() {
-    // let lectures = {};
-
-    // for (const lectureId in store.lectures) {
-    //   const lecture = store.lectures[lectureId];
-    //   console.log(lecture);
-    //   lectures[lectureId] = lecture;
-    //    lectures[lectureId].studyProgramName = store.studyPrograms[lecture.studyProgram].name;
-    //   console.log(lectures);
-    // }
+    let lectures = Object.values(store.lectures).map((lecture) => {
+      let newLecture = JSON.parse(JSON.stringify(lecture));
+      newLecture.studyProgram = store.studyPrograms[lecture.studyProgram].name;
+      return newLecture;
+    });
 
     return {
       store,
       lectureId: "",
-      data: store.lectures,
+      data: lectures,
       columns: [
         ["lectureName", "Vorlesung"],
         ["moduleName", "Modul"],
         ["Duration", "Dauer"],
-        ["studyProgramName", "Studienjahrgang"],
+        ["studyProgram", "Studiengang"],
       ],
     };
   },
@@ -64,6 +60,21 @@ export default {
     },
     removeLecture: function (id) {
       this.store.removeLecture(id);
+    },
+  },
+  watch: {
+    store: {
+      handler() {
+        let lectures = Object.values(store.lectures).map((lecture) => {
+          let newLecture = JSON.parse(JSON.stringify(lecture));
+          newLecture.studyProgram =
+            store.studyPrograms[lecture.studyProgram].name;
+          return newLecture;
+        });
+
+        this.data = lectures;
+      },
+      deep: true,
     },
   },
 };

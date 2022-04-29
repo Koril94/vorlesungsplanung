@@ -135,16 +135,14 @@ export default {
       let saveSemester = JSON.parse(JSON.stringify(this.semester));
 
       let studyClassSemesters =
-        store.studyClasses[saveSemester.studyClasses].semesters;
+        store.studyClasses[saveSemester.studyClass].semesters;
       if (!studyClassSemesters.includes(semesterId))
         studyClassSemesters.push(semesterId);
 
       store.semesters[semesterId] = saveSemester;
-      console.log(isUpdate);
       this.semester = isUpdate
         ? saveSemester
         : JSON.parse(JSON.stringify(emptySemester));
-      console.log(this.semester);
     },
   },
 };
