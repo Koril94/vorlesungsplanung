@@ -1,11 +1,8 @@
 <template>
   <div class="container">
     <div class="d-flex justify-content-evenly flex-wrap p-3">
-      <div
-        class="mx-3 card  mb-3"
-        style="max-width: 30rem"
-      >
-        <div class="card-header text-white  bg-primary">Nächste Vorlesung</div>
+      <div class="mx-3 card mb-3" style="max-width: 30rem">
+        <div class="card-header text-white bg-primary">Nächste Vorlesung</div>
         <div class="card-body">
           <LectureDateDisplay :lectureDateId="lectureDateId">
           </LectureDateDisplay>
@@ -61,7 +58,7 @@
 import "@fullcalendar/core/vdom"; // solves problem with Vite
 import FullCalendar from "@fullcalendar/vue3";
 import dayGridPlugin from "@fullcalendar/daygrid";
-import LectureDateDisplay from "../components/LectureDateDisplay.vue"
+import LectureDateDisplay from "../components/LectureDateDisplay.vue";
 import { store } from "../store";
 
 export default {
