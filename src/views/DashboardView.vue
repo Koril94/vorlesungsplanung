@@ -1,48 +1,57 @@
 <template>
-  <div class="container">
+  <div class="bg-light">
+<div class="container">
     <div class="d-flex justify-content-evenly flex-wrap p-3">
       <div class="mx-3 card mb-3" style="max-width: 30rem">
-        <div class="card-header text-white bg-primary">Nächste Vorlesung</div>
-        <div class="card-body">
+        <div class="card-header text-dark bg-primary">Nächste Vorlesung</div>
+        <div class="card-body bg-card">
           <LectureDateDisplay :semesterId="semesterId"> </LectureDateDisplay>
         </div>
       </div>
       <div
-        class="mx-3 card text-white bg-primary mb-3"
+        class="mx-3 card text-dark bg-primary mb-3"
         style="max-width: 30rem"
       >
         <div class="card-header">News</div>
-        <div class="card-body">
-          <h5 class="card-title">Primary card title</h5>
+        <div class="card-body bg-card">
+          <h5 class="card-title">Maskenpflicht</h5>
           <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+            Ab dem 1.April 2022 entfällt die Maskenpflicht. Es werden auch keine Covid-19 Test´s mehr benötigt um in das Gebäude zu kommen. 
           </p>
         </div>
       </div>
       <div
-        class="mx-3 card text-white bg-primary mb-3"
+        class="mx-3 card text-dark bg-primary mb-3"
         style="max-width: 30rem"
       >
         <div class="card-header">Aufgaben</div>
-        <div class="card-body">
-          <h5 class="card-title">Primary card title</h5>
+        <div class="card-body bg-card">
+          <h5 class="card-title">Aufgabenliste</h5>
           <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+           
+                  Vorlesung Wirtschaftsinformatiker,
+                  Vertiefung Javascript,
+                  Klausur Korrektur Digitale Infrastrukturen SCMT
+               
+
+           
+
           </p>
         </div>
       </div>
       <div
-        class="mx-3 card text-white bg-primary mb-3"
+        class="mx-3 card text-dark bg-primary mb-3"
         style="max-width: 30rem"
       >
         <div class="card-header">Dokumente</div>
-        <div class="card-body">
-          <h5 class="card-title">Primary card title</h5>
+        <div class="card-body bg-card">
+          <h5 class="card-title">PDF</h5>
           <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+
+            Klausur Web-Programmierung,
+            Skript Web-Programmierung,
+            Skript Digitale Infrastrukturen,
+
           </p>
         </div>
       </div>
@@ -51,7 +60,10 @@
     <div class="container-fluid px-5 calendar my-5">
       <FullCalendar :options="calendarOptions" />
     </div>
+    <div class="pt-3"></div>
   </div>
+  </div>
+  
 </template>
 <script>
 import "@fullcalendar/core/vdom"; // solves problem with Vite

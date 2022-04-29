@@ -56,6 +56,6 @@ import { store } from "./store";
 
 <style>
 /* @import "@/assets/base.css"; */
-@import "@/assets/css/bootstrap.min.css";
+/* @import "@/assets/css/bootstrap.min.css"; */
 @import "@/assets/css/main.css";
 </style>

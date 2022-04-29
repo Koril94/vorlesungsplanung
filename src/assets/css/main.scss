@@ -1,3 +1,6 @@
+$primary: #ffd000;
+$secondary: #888e94;
+
 * {
     padding: 0;
     margin: 0;
@@ -75,4 +78,15 @@ body {
 
 .calendar {
     height: 60vh;
+}
+
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+
+.card {
+    box-shadow: 2px 2px 1px $secondary;
+    color: black;
+}
+
+.bg-card {
+    background-color: #f0f3f6;
 }
