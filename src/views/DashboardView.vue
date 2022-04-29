@@ -7,7 +7,7 @@
       >
         <div class="card-header text-white  bg-primary">Nächste Vorlesung</div>
         <div class="card-body">
-          <LectureDateDisplay :semesterId="semesterId">
+          <LectureDateDisplay :lectureDateId="lectureDateId">
           </LectureDateDisplay>
         </div>
       </div>
@@ -71,7 +71,7 @@ export default {
   },
   setup() {},
   data() {
-    let semesterId;
+    let lectureDateId;// = 'lectureDate1';
     let events = [];
     let addedDates = [];
     Object.values(store.lectures).forEach((lecture) =>
@@ -86,11 +86,11 @@ export default {
         };
         events.push(singleEvent);
         addedDates.push(lectureDate);
-        semesterId = dateEvent.id;
+        lectureDateId = dateEvent.id;
       })
     );
     return {
-      semesterId,
+      lectureDateId,
       store,
       calendarOptions: {
         plugins: [dayGridPlugin],
