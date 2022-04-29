@@ -50,11 +50,11 @@ body {
 }
 
 .bg-dark {
-    background-color: #212529; 
+    background-color: #212529;
 }
 
 .text-primary {
-    color: #f2f1ef ; 
+    color: #f2f1ef;
 
 }
 
@@ -97,6 +97,14 @@ body {
     color: black;
 }
 
-.bg-card {
+.bg-card,
+.list-group-item {
     background-color: #f0f3f6;
 }
+
+.align-center {
+    align-items: center;
+}
+
+$list-group-bg: #f0f3f6;
+$list-group-item-bg-scale: 0%;
