@@ -44,13 +44,11 @@ export default {
     lectureDateId: String,
   },
   data() {
-    console.log(store.lectureDates);
     const lectureDate =
       this.lectureDateId in store.lectureDates
         ? store.lectureDates[this.lectureDateId]
         : JSON.parse(JSON.stringify(emptyLectureDate));
 
-    console.log(store.lectureDates);
     return {
       store: store,
       lectureDate: lectureDate,
@@ -64,12 +62,10 @@ export default {
       deep: true,
     },
     lectureDateId(newLectureDateId, oldLectureDateId) {
-      console.log(store.lectureDates);
       this.lectureDate =
         newLectureDateId in store.lectureDates
           ? store.lectureDates[newLectureDateId]
           : JSON.parse(JSON.stringify(emptyLectureDate));
-      console.log(store.lectureDates);
     },
   },
 };

@@ -3,7 +3,7 @@
     <div class="container">
       <div class="d-flex justify-content-evenly flex-wrap p-3">
         <div class="mx-3 card mb-3" style="max-width: 30rem">
-          <div class="card-header text-dark bg-primary">Nächste Vorlesung</div>
+          <div class="card-header text-dark bg-primary">Nächster Vorlesungstermin</div>
           <div class="card-body bg-card">
             <LectureDateDisplay :lectureDateId="lectureDateId">
             </LectureDateDisplay>
@@ -39,6 +39,16 @@
           class="mx-3 card text-dark bg-primary mb-3"
           style="max-width: 30rem"
         >
+          <div class="card-header">Vorlesungen</div>
+          <div class="card-body bg-card p-0">
+            <LectureDisplay>
+            </LectureDisplay>
+          </div>
+        </div>
+        <!-- <div
+          class="mx-3 card text-dark bg-primary mb-3"
+          style="max-width: 30rem"
+        >
           <div class="card-header">Dokumente</div>
           <div class="card-body bg-card">
             <h5 class="card-title">PDF</h5>
@@ -47,7 +57,7 @@
               Digitale Infrastrukturen,
             </p>
           </div>
-        </div>
+        </div> -->
       </div>
 
       <div class="container-fluid px-5 calendar my-5">
@@ -62,11 +72,13 @@ import "@fullcalendar/core/vdom"; // solves problem with Vite
 import FullCalendar from "@fullcalendar/vue3";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import LectureDateDisplay from "../components/LectureDateDisplay.vue";
+import LectureDisplay from "../components/LectureDisplay.vue";
 import { store } from "../store";
 
 export default {
   components: {
     LectureDateDisplay,
+    LectureDisplay,
     FullCalendar, // make the <FullCalendar> tag available
   },
   setup() {},
