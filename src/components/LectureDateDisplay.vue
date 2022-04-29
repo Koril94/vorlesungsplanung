@@ -39,6 +39,8 @@ const emptyLectureDate = {
   lectureDates: [],
 };
 export default {
+  mounted() {
+  },
   setup() {},
   props: {
     lectureDateId: String,
@@ -57,12 +59,6 @@ export default {
     };
   },
   watch: {
-    store: {
-      handler() {
-        this.data = getData();
-      },
-      deep: true,
-    },
     lectureDateId(newLectureDateId, oldLectureDateId) {
       console.log(store.lectureDates);
       this.lectureDate =
@@ -72,5 +68,6 @@ export default {
       console.log(store.lectureDates);
     },
   },
+  
 };
 </script>

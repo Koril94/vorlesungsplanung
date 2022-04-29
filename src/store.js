@@ -11,6 +11,15 @@ const lectures = {
     lecturers: ["lecturer1"],
     studyProgram: "studyProgram1",
   },
+  lecture2: {
+    id: "lecture2",
+    lectureName: "Einführung in Kinderformate",
+    moduleName: "Medien",
+    Duration: 125,
+    lectureDates: ["lectureDate2"],
+    lecturers: ["lecturer2"],
+    studyProgram: "studyProgram2",
+  },
 };
 
 const lecturers = {
@@ -22,6 +31,15 @@ const lecturers = {
     lectureDates: ["lectureDate1"],
     lectures: ["lecture1"],
     studyProgram: "studyProgram1",
+  },
+  lecturer2: {
+    id: "lecturer2",
+    firstName: "Benjamin",
+    lastName: "Blümchen",
+    email: "benni.b@email.fancy",
+    lectureDates: ["lectureDate2"],
+    lectures: ["lecture2"],
+    studyProgram: "studyProgram2",
   },
 };
 
@@ -35,6 +53,15 @@ const semesters = {
     studyClass: "studyClass1",
     lectureDates: ["lectureDate1"],
   },
+  semester2: {
+    id: "semester2",
+    startDate: "2022-02-01",
+    endDate: "2022-08-31",
+    number: 1,
+    name: "Benni22",
+    studyClass: "studyClass2",
+    lectureDates: ["lectureDate2"],
+  },
 };
 
 const studyPrograms = {
@@ -45,6 +72,14 @@ const studyPrograms = {
     studyClasses: ["studyClass1"],
     lectures: ["lecture1"],
     lecturers: ["lecturer1"],
+  },
+  studyProgram2: {
+    id: "studyProgram2",
+    name: "Medien",
+    shortName: "Med",
+    studyClasses: ["studyClass2"],
+    lectures: ["lecture2"],
+    lecturers: ["lecturer2"],
   },
 };
 
@@ -57,6 +92,14 @@ const studyClasses = {
     studyProgram: "studyProgram1",
     semesters: ["semester1"],
   },
+  studyClass2: {
+    id: "studyClass2",
+    name: "Einführung in Kinderformate",
+    startDate: "2020-5-01",
+    endDate: "2022-09-30",
+    studyProgram: "studyProgram2",
+    semesters: ["semester2"],
+  },
 };
 
 const lectureDates = {
@@ -68,6 +111,15 @@ const lectureDates = {
     lecture: "lecture1",
     lecturer: "lecturer1",
     semester: "semester1",
+  },
+  lectureDate2: {
+    id: "lectureDate2",
+    name: "Einführung in Kinderformate",
+    startDate: "2022-03-02",
+    endDate: "2022-07-02",
+    lecture: "lecture2",
+    lecturer: "lecturer2",
+    semester: "semester2",
   },
 };
 
