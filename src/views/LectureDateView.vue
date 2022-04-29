@@ -40,12 +40,12 @@ export default {
       lectureDateId: "",
       data: store.lectureDates,
       columns: [
-        "name",
-        "startDate",
-        "endDate",
-        "lecturer",
-        "lecture",
-        "semester",
+        ["name", "Termin"],
+        ["startDate", "Startzeit"],
+        ["endDate", "Endzeit"],
+        ["lecturer", "Dozent"],
+        ["lecture", "Vorlesung"],
+        ["semester", "Semester"],
       ],
     };
   },

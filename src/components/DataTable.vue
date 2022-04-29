@@ -4,7 +4,7 @@
       <thead>
         <tr>
           <th v-for="key in columns" :key="key">
-            {{ key }}
+            {{ key[1] }}
             <span> </span>
           </th>
           <th></th>
@@ -14,7 +14,7 @@
       <tbody>
         <tr v-for="entry in data" :key="entry">
           <td v-for="key in columns" :key="key">
-            {{ entry[key] }}
+            {{ entry[key[0]]}}
           </td>
           <td>
             <button

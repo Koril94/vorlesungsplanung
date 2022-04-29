@@ -43,11 +43,26 @@ export default {
     },
   },
   data() {
+    // let semesters = {};
+
+    // for (const semesterId in store.semesters) {
+    //   const semester = store.semesters[semesterId];
+    //   semesters[semesterId] = semester;
+    //   semesters[semesterId].studyClassName =
+    //     store.studyClasses[semester.studyClass].name;
+    // }
+
     return {
       semesterId: "",
       store: store,
       data: store.semesters,
-      columns: ["name", "startDate", "endDate", "studyClass", "number"],
+      columns: [
+        ["name", "Semester"],
+        ["startDate", "Semesterbegin"],
+        ["endDate", "Semesterende"],
+        ["studyClassName", "Studiengang"],
+        ["number", "Nummer"],
+      ],
     };
   },
 };

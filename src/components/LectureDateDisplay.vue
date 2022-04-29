@@ -2,25 +2,35 @@
   <main class="row">
     <div class="col col-5 d-flex justify-content-between">
       <label>Von:</label>
-      <p>2022-02-12</p>
+      <p>{{ lectureDate.startDate }}</p>
     </div>
     <div class="col col-1"></div>
     <div class="col col-5 d-flex justify-content-between">
       <label>Bis:</label>
-      <p>2022-02-12</p>
+      <p>{{ lectureDate.endDate }}</p>
     </div>
     <div class="col col-12">
-      <h5>Vorlesung 123</h5>
+      <h5>{{ store.lectures[lectureDate.lecture].lectureName }}</h5>
     </div>
-    <div class="col col-6"><p>Semester</p></div>
 
-    <div class="col col-6"><p>Studiengang</p></div>
+    <div class="col col-6">
+      <p>{{ lectureDate.name }}</p>
+    </div>
+    <div class="col col-6">
+      <p>
+        {{ store.lecturers[lectureDate.lecturer].firstName }}
+        {{ store.lecturers[lectureDate.lecturer].lastName }}
+      </p>
+    </div>
+    <div class="col col-6">
+      <p>{{ store.semesters[lectureDate.semester].name }}</p>
+    </div>
   </main>
 </template>
 
 <script>
 import { store } from "../store";
-const emptySemester = {
+const emptyLectureDate = {
   name: "",
   number: null,
   startDate: null,
@@ -31,24 +41,29 @@ const emptySemester = {
 export default {
   setup() {},
   props: {
-    semesterId: String,
+    lectureDateId: String,
   },
   data() {
-    const semester =
-      this.semesterId in store.semesters
-        ? store.semesters[this.semesterId]
-        : JSON.parse(JSON.stringify(emptySemester));
+    console.log(store.lectureDates);
+    const lectureDate =
+      this.lectureDateId in store.lectureDates
+        ? store.lectureDates[this.lectureDateId]
+        : JSON.parse(JSON.stringify(emptyLectureDate));
+
+    console.log(store.lectureDates);
     return {
       store: store,
-      semester: semester,
+      lectureDate: lectureDate,
     };
   },
   watch: {
-    semesterId(newSemesterId, oldSemesterId) {
-      this.semester =
-        newSemesterId in store.semesters
-          ? store.semesters[newSemesterId]
-          : JSON.parse(JSON.stringify(emptySemester));
+    lectureDateId(newLectureDateId, oldLectureDateId) {
+      console.log(store.lectureDates);
+      this.lectureDate =
+        newLectureDateId in store.lectureDates
+          ? store.lectureDates[newLectureDateId]
+          : JSON.parse(JSON.stringify(emptyLectureDate));
+      console.log(store.lectureDates);
     },
   },
 };

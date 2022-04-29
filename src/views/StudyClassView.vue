@@ -53,7 +53,12 @@ export default {
       studyClassId: "",
       store: store,
       data: store.studyClasses,
-      columns: ["name", "startDate", "endDate", "studyProgram"],
+      columns: [
+        ["name", "Studienjahrgang"],
+        ["startDate", "Begin Datum"],
+        ["endDate", "End Datum"],
+        ["studyProgram", "Studiengang"],
+      ],
     };
   },
 };

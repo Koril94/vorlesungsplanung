@@ -5,7 +5,7 @@
       <div class="mx-3 card mb-3" style="max-width: 30rem">
         <div class="card-header text-dark bg-primary">Nächste Vorlesung</div>
         <div class="card-body bg-card">
-          <LectureDateDisplay :semesterId="semesterId"> </LectureDateDisplay>
+          <LectureDateDisplay :lectureDateId="lectureDateId"> </LectureDateDisplay>
         </div>
       </div>
       <div
@@ -79,9 +79,12 @@ export default {
   },
   setup() {},
   data() {
-    let semesterId;
+    let lectureDateId;// = 'lectureDate1';
     let events = [];
     let addedDates = [];
+
+
+
     Object.values(store.lectures).forEach((lecture) =>
       lecture.lectureDates.forEach((lectureDate) => {
         let dateEvent = store.lectureDates[lectureDate];
@@ -94,11 +97,17 @@ export default {
         };
         events.push(singleEvent);
         addedDates.push(lectureDate);
-        semesterId = dateEvent.id;
       })
     );
+
+    events.sort(function (a,b){
+      return new Date(b.startDate) - new Date(a.startDate);
+    })
+
+    lectureDateId = events[0].id;
+
     return {
-      semesterId,
+      lectureDateId,
       store,
       calendarOptions: {
         plugins: [dayGridPlugin],
