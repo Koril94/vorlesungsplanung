@@ -11,7 +11,7 @@
           data-bs-toggle="modal"
           data-bs-target="#semesterControllerModal"
         >
-          + Volresungstermin hinzufügen
+          + Vorlesungstermin hinzufügen
         </button>
       </div>
       <DataTable
