@@ -12,7 +12,7 @@
           data-bs-toggle="modal"
           data-bs-target="#semesterControllerModal"
         >
-          + Donzenten hinzufügen
+          + Dozenten hinzufügen
         </button>
       </div>
       <DataTable

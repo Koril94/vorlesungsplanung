@@ -11,7 +11,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">New Lecturer</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Neuer Dozent</h5>
           <button
             type="button"
             class="btn-close"
@@ -22,7 +22,7 @@
         <div class="modal-body px-4">
           <form class="row g-3">
             <div class="col-md-6">
-              <label for="firstName" class="form-label">First name</label>
+              <label for="firstName" class="form-label">Vorname</label>
               <input
                 v-model="lecturer.firstName"
                 type="text"
@@ -31,7 +31,7 @@
               />
             </div>
             <div class="col-md-6">
-              <label for="lastName" class="form-label">Last name</label>
+              <label for="lastName" class="form-label">Nachname</label>
               <input
                 v-model="lecturer.lastName"
                 type="text"
@@ -49,7 +49,7 @@
               />
             </div>
             <div class="col-12">
-              <label for="studyProgram" class="form-label">Study Program</label>
+              <label for="studyProgram" class="form-label">Studiengang</label>
               <select
                 v-model="lecturer.studyProgram"
                 id="studyClass"
@@ -68,14 +68,14 @@
         </div>
         <div class="modal-footer px-3">
           <button type="button" @click="create" class="btn btn-primary">
-            Add lecturer
+            Dozent hinzufügen
           </button>
           <button
             type="button"
             class="btn btn-secondary"
             data-bs-dismiss="modal"
           >
-            Close
+            Schließen
           </button>
         </div>
       </div>

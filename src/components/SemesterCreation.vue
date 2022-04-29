@@ -9,7 +9,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">New semester</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Neues Semester</h5>
           <button
             type="button"
             class="btn-close"
@@ -29,7 +29,7 @@
               />
             </div>
             <div class="col-md-6">
-              <label for="number" class="form-label">Number</label>
+              <label for="number" class="form-label">Nummer</label>
               <input
                 v-model="semester.number"
                 type="number"
@@ -38,7 +38,7 @@
               />
             </div>
             <div class="col-12">
-              <label for="startDate" class="form-label">Start date</label>
+              <label for="startDate" class="form-label">Anfangsdatum</label>
               <input
                 type="date"
                 class="form-control"
@@ -48,7 +48,7 @@
               />
             </div>
             <div class="col-12">
-              <label for="endDate" class="form-label">End date</label>
+              <label for="endDate" class="form-label">Enddatum</label>
               <input
                 type="date"
                 class="form-control"
@@ -57,7 +57,7 @@
               />
             </div>
             <div class="col-md-12">
-              <label for="studyClass" class="form-label">Study Class</label>
+              <label for="studyClass" class="form-label">Studienjahrgang</label>
               <select
                 v-model="semester.studyClass"
                 id="studyClass"
@@ -76,14 +76,14 @@
         </div>
         <div class="modal-footer px-3">
           <button type="button" @click="create" class="btn btn-primary">
-            Add semester
+            Semester hinzufügen
           </button>
           <button
             type="button"
             class="btn btn-secondary"
             data-bs-dismiss="modal"
           >
-            Close
+            Schließen
           </button>
         </div>
       </div>

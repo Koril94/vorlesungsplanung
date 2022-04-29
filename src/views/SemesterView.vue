@@ -11,7 +11,7 @@
           data-bs-toggle="modal"
           data-bs-target="#semesterControllerModal"
         >
-          <img src="/src/components/icons/plus.svg" alt="Add" /> Semester
+          + Semester
           hinzufügen
         </button>
       </div>
