@@ -36,6 +36,14 @@ body #app {
     margin-left: 2rem;
   }
 }
+.bg-dark {
+  background-color: #212529;
+}
+
+.text-primary {
+  color: #f2f1ef;
+}
+
 .content {
   background-color: lightgrey;
   height: 100%;
