@@ -44,6 +44,7 @@ body #app {
     margin-left: 2rem;
   }
 }
+
 .bg-dark {
   background-color: #212529;
 }
@@ -62,6 +63,8 @@ body #app {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
