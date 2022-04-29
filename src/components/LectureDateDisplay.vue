@@ -10,17 +10,20 @@
       <p>{{ lectureDate.endDate }}</p>
     </div>
     <div class="col col-12">
-      <h5>{{ lectureDate.name }}</h5>
+      <h5>{{ store.lectures[lectureDate.lecture].lectureName }}</h5>
     </div>
 
     <div class="col col-6">
-      <p>{{ lectureDate.lecture }}</p>
+      <p>{{ lectureDate.name }}</p>
     </div>
     <div class="col col-6">
-      <p>{{ lectureDate.lecturer }}</p>
+      <p>
+        {{ store.lecturers[lectureDate.lecturer].firstName }}
+        {{ store.lecturers[lectureDate.lecturer].lastName }}
+      </p>
     </div>
     <div class="col col-6">
-      <p>{{ lectureDate.semester }}</p>
+      <p>{{ store.semesters[lectureDate.semester].name }}</p>
     </div>
   </main>
 </template>

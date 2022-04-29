@@ -71,6 +71,9 @@ export default {
     let lectureDateId;// = 'lectureDate1';
     let events = [];
     let addedDates = [];
+
+
+
     Object.values(store.lectures).forEach((lecture) =>
       lecture.lectureDates.forEach((lectureDate) => {
         let dateEvent = store.lectureDates[lectureDate];
@@ -83,9 +86,15 @@ export default {
         };
         events.push(singleEvent);
         addedDates.push(lectureDate);
-        lectureDateId = dateEvent.id;
       })
     );
+
+    events.sort(function (a,b){
+      return new Date(b.startDate) - new Date(a.startDate);
+    })
+
+    lectureDateId = events[0].id;
+
     return {
       lectureDateId,
       store,
