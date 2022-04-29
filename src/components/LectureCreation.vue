@@ -64,6 +64,22 @@
                 </option>
               </select>
             </div>
+            <div class="col-md-12">
+              <label for="studyProgram" class="form-label">Dozent</label>
+              <select
+                v-model="lecture.lecturers[0]"
+                id="studyProgram"
+                class="form-select"
+              >
+                <option
+                  v-for="lecturer in store.lecturers"
+                  v-bind:key="lecturer.id"
+                  v-bind:value="lecturer.id"
+                >
+                  {{ lecturer.lastName }}
+                </option>
+              </select>
+            </div>
           </form>
         </div>
         <div class="modal-footer px-3">

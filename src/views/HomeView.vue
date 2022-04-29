@@ -3,7 +3,6 @@
     id="carouselExampleInterval"
     class="carousel slide"
     data-bs-ride="carousel"
-    data-bs-interval="3000"
   >
     <div class="carousel-inner">
       <div class="carousel-item active" data-bs-interval="3000">
@@ -65,5 +64,12 @@
 <script>
 export default {
   setup() {},
+  mounted() {
+    let button = document.querySelector('.carousel-control-next');
+    setInterval(() => {
+        button.click();
+    }, 5000);
+    
+  }
 };
 </script>

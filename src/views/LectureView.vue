@@ -28,25 +28,30 @@
 import { store } from "../store";
 import DataTable from "../components/DataTable.vue";
 import LectureCreation from "../components/LectureCreation.vue";
-
+function getData() {
+let lectures = Object.values(store.lectures).map((lecture) => {
+      let newLecture = JSON.parse(JSON.stringify(lecture));
+      newLecture.studyProgram = store.studyPrograms[lecture.studyProgram].name;
+      newLecture.lecturer = store.lecturers[lecture.lecturers[0]].lastName;
+      return newLecture;
+    });
+    return lectures
+}
 export default {
   setup() {},
   data() {
-    let lectures = Object.values(store.lectures).map((lecture) => {
-      let newLecture = JSON.parse(JSON.stringify(lecture));
-      newLecture.studyProgram = store.studyPrograms[lecture.studyProgram].name;
-      return newLecture;
-    });
+    
 
     return {
       store,
       lectureId: "",
-      data: lectures,
+      data: getData(),
       columns: [
         ["lectureName", "Vorlesung"],
         ["moduleName", "Modul"],
         ["Duration", "Dauer"],
         ["studyProgram", "Studiengang"],
+        ["lecturer", "Dozent"]
       ],
     };
   },
@@ -65,14 +70,7 @@ export default {
   watch: {
     store: {
       handler() {
-        let lectures = Object.values(store.lectures).map((lecture) => {
-          let newLecture = JSON.parse(JSON.stringify(lecture));
-          newLecture.studyProgram =
-            store.studyPrograms[lecture.studyProgram].name;
-          return newLecture;
-        });
-
-        this.data = lectures;
+        this.data = getData();
       },
       deep: true,
     },

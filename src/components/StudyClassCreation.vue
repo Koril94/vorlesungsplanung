@@ -9,7 +9,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">New study class</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Neuer Studienjahrgang</h5>
           <button
             type="button"
             class="btn-close"
@@ -29,7 +29,7 @@
               />
             </div>
             <div class="col-12">
-              <label for="startDate" class="form-label">Start date</label>
+              <label for="startDate" class="form-label">Anfangsdatum</label>
               <input
                 type="date"
                 class="form-control"
@@ -39,7 +39,7 @@
               />
             </div>
             <div class="col-12">
-              <label for="endDate" class="form-label">End date</label>
+              <label for="endDate" class="form-label">Enddatum</label>
               <input
                 type="date"
                 class="form-control"
@@ -48,7 +48,7 @@
               />
             </div>
             <div class="col-md-12">
-              <label for="studyProgram" class="form-label">Study Class</label>
+              <label for="studyProgram" class="form-label">Studiengang</label>
               <select
                 v-model="studyClass.studyProgram"
                 id="studyProgram"
@@ -67,14 +67,14 @@
         </div>
         <div class="modal-footer px-3">
           <button type="button" @click="create" class="btn btn-primary">
-            Add study class
+            Studienjahrgang hinzufügen
           </button>
           <button
             type="button"
             class="btn btn-secondary"
             data-bs-dismiss="modal"
           >
-            Close
+            Schließen
           </button>
         </div>
       </div>
@@ -93,6 +93,16 @@ const emptyStudyClass = {
   lectureDates: [],
 };
 export default {
+  mounted() {
+    let button = document.querySelector('.modal-footer > button.btn-primary');
+    console.log(button);
+    button.addEventListener('click', function () {
+      let modale = document.querySelector('#semesterControllerModal');
+      console.log(modale);
+      var modal = bootstrap.Modal.getInstance(modale)
+      modal.hide();
+    })
+  },
   setup() {},
   props: {
     studyClassId: String,

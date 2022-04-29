@@ -129,6 +129,16 @@ const emptyLectureDate = {
   lectureDates: [],
 };
 export default {
+  mounted() {
+    let button = document.querySelector('.modal-footer > button.btn-primary');
+    console.log(button);
+    button.addEventListener('click', function () {
+      let modale = document.querySelector('#semesterControllerModal');
+      console.log(modale);
+      var modal = bootstrap.Modal.getInstance(modale)
+      modal.hide();
+    })
+  },
   setup() {},
   props: {
     lectureDateId: String,
