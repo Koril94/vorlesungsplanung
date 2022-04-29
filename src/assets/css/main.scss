@@ -102,8 +102,9 @@ body {
     background-color: #f0f3f6;
 }
 
-.align-center {
+.dashboard-content {
     align-items: center;
+    max-height: 30vh;
 }
 
 $list-group-bg: #f0f3f6;

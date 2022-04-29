@@ -1,12 +1,12 @@
 <template>
   <main class="row">
-    <div class="col col-5 d-flex justify-content-between">
-      <label>Von:</label>
+    <div class="col col-5 d-flex justify-content-between flex-wrap">
+      <label class="p-1">Von:</label>
       <p>{{ lectureDate.startDate }}</p>
     </div>
     <div class="col col-1"></div>
-    <div class="col col-5 d-flex justify-content-between">
-      <label>Bis:</label>
+    <div class="col col-5 d-flex justify-content-between  flex-wrap">
+      <label class="p-1">Bis:</label>
       <p>{{ lectureDate.endDate }}</p>
     </div>
     <div class="col col-12">
